@@ -9,10 +9,36 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
+        appBar: AppBar(
+          title: const Text('row coloumn'),
+          centerTitle: true,
+          backgroundColor: Colors.blue,
+        ),
+        body: const Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text('text 1'),
+                  Text('text 2'),
+                  Text('text 3'),
+                ],
+              ),
+              SizedBox(height: 20),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text('text 1'),
+                  Text('text 2'),
+                  Text('text 3'),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
